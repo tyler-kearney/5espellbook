@@ -13,7 +13,8 @@ export const fetchSpells = async (): Promise<Spell[]> => {
   const data = await response.json();
 
   const detailPromises = data.results.map((s: { url: string }) => {
-    fetch(`https://www.dnd5eapi.co${s.url}`).then((res) => res.json());
+  return fetch(`https://www.dnd5eapi.co${s.url}`)
+    .then((res) => res.json());
   });
 
   return Promise.all(detailPromises);
