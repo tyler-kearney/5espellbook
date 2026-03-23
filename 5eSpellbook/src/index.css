@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arcane-orange: #f97316;
+  --color-infernal-bg: #09090b;
+
+  --animate-mist: mist 2s ease-in-out infinite;
+
+  @keyframes mist {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(-5px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-arcane-bg text-zinc-100 antialiased;
+  }
+}
+
+@variant dark (&:where(.dark, .dark *));
