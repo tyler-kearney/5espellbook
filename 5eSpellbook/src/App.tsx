@@ -5,6 +5,7 @@ import Header from './Header.tsx';
 import SpellShelf from './SpellShelf.tsx';
 import ControlPanel from './ControlPanel.tsx';
 import QuickViewModal from './QuickViewModal.tsx';
+import Footer from "./Footer.tsx"
 
 
 
@@ -68,6 +69,7 @@ function App() {
         <QuickViewModal spell={selectedSpell} onClose={() => setSelectedSpell(null)} />
       )}
     </div>);
+    <Footer />
 }
 
 export default App
