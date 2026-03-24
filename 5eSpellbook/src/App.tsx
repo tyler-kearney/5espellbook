@@ -28,6 +28,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [selectedClass, setSelectedClass] = useState("All");
   const [selectedLevel, setSelectedLevel] = useState("All");
+  const [selectedSpell, setSelectedSpell] = useState<Spell | null>(null);
+
+
 
   const onReset = () => {
     setSearchQuery("");
@@ -61,7 +64,9 @@ function App() {
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <ControlPanel selectedClass={selectedClass} setSelectedClass={setSelectedClass} selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} onReset={onReset} />
       <SpellShelf spells={filteredSpells} loading={loading}/>
-      <QuickViewModal />
+      {selectedSpell && (
+        <QuickViewModal spell={selectedSpell} onClose={() => setSelectedSpell(null)} />
+      )}
     </div>);
 }
 
