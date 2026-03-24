@@ -26,7 +26,7 @@ function Footer() {
                 </p>
 
                 <p className="text-xs text-zinc-600">
-                    &copy; {currentYear} Arcane Directory. <br />
+                    &copy; {currentYear} 5e Spellbook. <br />
                     Distributed under the <span className="text-zinc-400">MIT License</span>.
                 </p>
             </div>
