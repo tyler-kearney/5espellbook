@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import './index.css'
 import type { Spell } from './types.ts';
 import Header from './Header.tsx';
 import SpellShelf from './SpellShelf.tsx';

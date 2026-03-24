@@ -1,4 +1,5 @@
 import type { Spell } from './types.ts';
+import './index.css'
 
 interface SpellCardProps {
     spell: Spell;

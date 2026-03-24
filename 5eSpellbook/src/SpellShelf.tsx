@@ -1,5 +1,5 @@
 import 'react'
-import './App.css'
+import './index.css'
 import type { Spell } from './types.ts';
 import SpellCard from './SpellCard.tsx';
 

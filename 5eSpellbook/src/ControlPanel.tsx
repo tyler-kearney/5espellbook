@@ -1,5 +1,5 @@
 import 'react'
-import './App.css'
+import './index.css'
 
 interface ControlPanelProps {
     selectedClass: string;
