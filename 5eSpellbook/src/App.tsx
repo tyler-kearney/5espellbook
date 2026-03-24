@@ -68,8 +68,8 @@ function App() {
       {selectedSpell && (
         <QuickViewModal spell={selectedSpell} onClose={() => setSelectedSpell(null)} />
       )}
+      <Footer />
     </div>);
-    <Footer />
 }
 
 export default App
