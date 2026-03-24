@@ -60,8 +60,8 @@ function App() {
     <div className="App">
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <ControlPanel selectedClass={selectedClass} setSelectedClass={setSelectedClass} selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} onReset={onReset} />
+      <SpellShelf spells={filteredSpells} loading={loading}/>
       <QuickViewModal />
-      <SpellShelf spells={filteredSpells} />
     </div>);
 }
 

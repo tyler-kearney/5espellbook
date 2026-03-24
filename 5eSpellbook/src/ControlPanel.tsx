@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import 'react'
 import './App.css'
 
 interface ControlPanelProps {
