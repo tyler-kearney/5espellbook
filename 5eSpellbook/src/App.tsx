@@ -52,6 +52,7 @@ function App() {
         setLoading(false);
       }
     }
+    getSpells();
   }, []);
 
   const filteredSpells = allSpells.filter(spell => {
