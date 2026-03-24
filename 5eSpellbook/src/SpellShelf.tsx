@@ -6,9 +6,10 @@ import SpellCard from './SpellCard.tsx';
 interface SpellShelfProps {
     spells: Spell[];
     loading: boolean;
+    onSpellClick: (spell: Spell) => void; // Setter function
 }
 
-function SpellShelf({ spells, loading }: SpellShelfProps) {
+function SpellShelf({ spells, loading, onSpellClick }: SpellShelfProps) {
     // Loading state
     if (loading) {
         return (
@@ -33,7 +34,7 @@ function SpellShelf({ spells, loading }: SpellShelfProps) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {spells.map((spell) => (
-                <SpellCard key={spell.index} spell={spell} />
+                <SpellCard key={spell.index} spell={spell} onOpen={() => onSpellClick(spell)} />
             ))}
         </div>
     )

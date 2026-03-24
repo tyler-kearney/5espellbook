@@ -2,9 +2,10 @@ import type { Spell } from './types.ts';
 
 interface SpellCardProps {
     spell: Spell;
+    onOpen: () => void; // Callback is in SpellShelf.tsx
 }
 
-function SpellCard({ spell }: SpellCardProps) {
+function SpellCard({ spell, onOpen }: SpellCardProps) {
     {/* Component acts as a template for the SpellShelf component */}
     return (
         <div className="group relative bg-zinc-900/40 border border-zinc-800 p-6 rounded-xl hover:border-orange-500/50 hover:bg-zinc-900 transition-all duration-300 flex flex-col justify-between h-full">
@@ -40,7 +41,9 @@ function SpellCard({ spell }: SpellCardProps) {
                         </div>
                     </div>
 
-                    <button className="w-full py-2.5 bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase rounded-lg tracking-widest hover:bg-orange-600 hover:text-white transition-all">
+                    <button className="w-full py-2.5 bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase rounded-lg tracking-widest hover:bg-orange-600 hover:text-white transition-all"
+                        onClick={onOpen}
+                    >
                         Details
                     </button>
                 </div>

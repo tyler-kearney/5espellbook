@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <ControlPanel selectedClass={selectedClass} setSelectedClass={setSelectedClass} selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} onReset={onReset} />
-      <SpellShelf spells={filteredSpells} loading={loading}/>
+      <SpellShelf spells={filteredSpells} loading={loading} onSpellClick={setSelectedSpell} />
       {selectedSpell && (
         <QuickViewModal spell={selectedSpell} onClose={() => setSelectedSpell(null)} />
       )}
