@@ -43,9 +43,8 @@ function App() {
     const getSpells = async () => {
       setLoading(true);
       try {
-        const data = await fetchSpells().then((data) => {
-          setAllSpells(data);
-        });
+        const data = await fetchSpells();
+        setAllSpells(data);
       } catch (error) {
         console.error("The weave is broken:", error);
       } finally {
