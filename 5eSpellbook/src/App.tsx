@@ -7,18 +7,24 @@ import ControlPanel from './ControlPanel.tsx';
 import QuickViewModal from './QuickViewModal.tsx';
 import Footer from "./Footer.tsx"
 
-
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const fetchSpells = async (): Promise<Spell[]> => {
   const response = await fetch('https://www.dnd5eapi.co/api/spells');
   const data = await response.json();
+  const allDetails: Spell[] = [];
 
-  const detailPromises = data.results.map((s: { url: string }) => {
-  return fetch(`https://www.dnd5eapi.co${s.url}`)
-    .then((res) => res.json());
-  });
+  // Fetch in batches of 20 to avoid being rate limited
+  for (let i = 0; i < data.results.lendth; i++) {
+    const s = data.results[i];
+    const res = await fetch(`https://www.dnd5eapi.co/api/spells/${s.url}`);
+    const detail = await res.json();
+    allDetails.push(detail);
 
-  return Promise.all(detailPromises);
+    // Pause every 20 seconds
+    if (i % 20 === 0) await sleep(500);
+  }
+  return allDetails;
 }
 
 function App() {
